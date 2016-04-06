@@ -1,0 +1,29 @@
+<h1>Coming soon!</h1>
+
+<% if @user_words %>
+<!-- why does this make it know we are post? is it the same as saying if @user_word exists???? -->
+<div class="params_post">
+  <% scores = @user_words.score_many %>
+  <% words = params["words"] %>
+  <% words.zip( scores ).each do | word , score | %>
+    <% next if word.empty? %>
+    <%= "#{word} #{score}" %>
+  <% end %>
+</div>
+<% end %>
+
+<div class="params">
+  <%= params %>
+</div>
+
+<form action="" method="post" accept-charset="utf-8">
+  <label for="score_word">Words</label>
+  <input type="text" name="words[]" value="" id="score_word">
+  <input type="text" name="words[]" value="" id="score_word">
+  <input type="text" name="words[]" value="" id="score_word">
+  <input type="text" name="words[]" value="" id="score_word">
+
+  <!-- name is what the code uses to lable to field. for and id should always be equal -->
+
+  <input type="submit" value="Submit">
+</form>
