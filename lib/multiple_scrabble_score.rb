@@ -3,7 +3,7 @@ class ScrabbleMultiple
     "h"=>4, "i"=>1, "j"=>8, "k"=>5, "l"=>1, "m"=>3, "n"=>1, "o"=>1, "p"=>3,
     "q"=>10, "r"=>1, "s"=>1, "t"=>1, "u"=>1, "v"=>4, "w"=>4, "x"=>8, "y"=>4,
     "z"=>10}
-  MAXIMUM_NUMBER_OF_LETTERS = 7
+  BONUS_NUMBER_OF_LETTERS = 7
 
   def initialize(words_array)
   @words = words_array
@@ -21,7 +21,7 @@ class ScrabbleMultiple
     score = 0
 
     #Add bonus for word_length corner case.
-    score = 50 if word.length == MAXIMUM_NUMBER_OF_LETTERS
+    score = 50 if word.length >= BONUS_NUMBER_OF_LETTERS
 
     split_word = word.downcase.split('') # downcase for comparing
 
