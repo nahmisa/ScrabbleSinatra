@@ -1,6 +1,19 @@
+* {
+  box-sizing: content-box;
+}
+
 html {
-  font-size: 16px;
-  color: rgb(14, 12, 14);
+  /* size | family */
+  font: 16px "News Gothic Standard.", sans-serif;
+  color: rgba(11, 11, 11, 1);
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(11, 11, 11, 1);
+  display: inline;
+  margin: .5rem;
 }
 
 main {
@@ -9,6 +22,54 @@ main {
   height: 50%;
   width: 100%;
 }
+
+header {
+  display:block;
+  padding: .5rem;
+  background: rgb(216, 187, 147);
+  /*for browsers that do not support gradients*/
+  background: linear-gradient(to bottom right, rgba(225,205, 168, 1), rgba(209, 180, 124, .8));
+  box-shadow: 0.1rem .1rem 0.2rem 0.1rem rgba(255, 253, 230, .8), 0.25rem .25rem 0.1rem 0.25rem rgba(109, 97, 83, 1), .5rem .5rem 0.1rem 0.5rem rgba(11, 11, 11, 1);
+  position:fixed;
+  top:-5rem;
+  height: 4rem;
+  opacity:.76;
+  transition:all 1s ease;
+  text-align: center;
+}
+
+/*h1 {
+  position: relative;
+}
+
+a {
+  position: relative;
+}*/
+
+header:hover {
+  opacity:1;
+  top:0rem;
+  transition:all 1s ease;
+}
+
+footer {
+  position: fixed;
+  bottom: 3%;
+}
+
+label {
+	float: left;
+	text-align: right;
+	margin-right: 15px;
+	width: 100px;
+}
+
+.nav-links {
+  display: inline-block;
+  float: left;
+  color: rgba(225,205, 168, 1);
+}
+
 
 /*style user input area*/
 
@@ -22,6 +83,7 @@ main {
   margin-right: 3rem;
   /* offset-x | offset-y | blur-radius | spread-radius | color */
   box-shadow: 0.1rem .1rem 0.2rem 0.1rem rgba(255, 253, 230, .8), 0.25rem .25rem 0.1rem 0.25rem rgba(109, 97, 83, 1), .5rem .5rem 0.1rem 0.5rem rgba(11, 11, 11, 1);
+  text-align: center;
 
 }
 
@@ -45,11 +107,4 @@ main {
   margin: auto;
   min-width: 50%;
   min-height: 50%;
-}
-
-
-/*homepage link styling*/
-.vertical-text {
-	transform: rotate(90deg);
-	transform-origin: left top 0;
 }
