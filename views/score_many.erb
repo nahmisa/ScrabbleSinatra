@@ -1,37 +1,33 @@
-<h2>Score Many Words</h2>
+<h2><a href="/score-many">Score Many Words</a></h2>
 
-<% if @quantity %>
-<form action="" method="post" accept-charset="utf-8">
-
-  <% @quantity.times do |word_input| %>
-    <lable>Word <input type="text" name="words[]" maxlength=7 value=""></b></lable>
-    <!-- br becasue i wanted it to be at the top -->
-  <% end %>
-  <!-- name is what the code uses to lable to field. for and id should always be equal -->
-  <input type="submit" value="Score">
-</form>
-<% end %>
-
-
-
+<%# display scored used words %>
 <% if @user_words %>
-<!-- why does this make it know we are post? is it the same as saying if @user_word exists???? -->
 <div class="params_post">
   <% scores = @user_words.score_many %>
   <% words = params["words"] %>
   <% words.zip(scores).each do |word , score| %>
     <% next if word.empty? %>
-    <%= "#{word} #{score}" %>
+    <%= "#{word.upcase} has a score of #{score}." %>
   <% end %>
 </div>
 <% end %>
 
-<div class="params">
-  <%= params %>
-</div>
+<%# display prompt for user word input %>
+<% if @quantity && !@user_words %>
+<form action="" method="post" accept-charset="utf-8">
 
-<form action="" method="post">
-  Number of words:
-  <input type="number" name="quantity" min="1">
-  <input type="submit">
+  <% @quantity.times do |word_input| %>
+    <lable class="new-line">Word<input type="text" name="words[]" maxlength=7 value=""></b></lable>
+  <% end %>
+  <input type="submit" value="Score">
 </form>
+<% end %>
+
+<%# prompt user for number of words to score %>
+<% if !@user_words && !@quantity %>
+  <form action="" method="post">
+    Number of words to score:
+    <input type="number" name="quantity" min="1">
+    <input type="submit" value="Go!">
+  </form>
+<% end %>

@@ -25,7 +25,7 @@ class ScrabbleScore < Sinatra::Base
   post '/score-many' do
 
     unless params["words"].nil?
-    @user_words = ScrabbleMultiple.new(params["words"])
+      @user_words = ScrabbleMultiple.new(params["words"])
     end
 
     @quantity = params["quantity"].to_i

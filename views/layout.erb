@@ -9,14 +9,14 @@
 
   </head>
   <body>
-    <header>
+    <header class="tile-style">
       <h1><a href="/">Scrabble Scores!</a></h1>
       <a href="/score" class="nav-links">Score One Word</a>
       <a href="/score-many" class="nav-links">Score Many Words</a>
     </header>
 
     <main>
-      <div class="input-area">
+      <div class="tile-style">
 
       <%= yield %>
 
@@ -24,13 +24,12 @@
     </main>
 
     <div class="background">
-    <!-- i wonder how this will affect accessability... at bottom because its not really content???-->
-    <img src="images/typography_Scrabble.jpg" alt="">
+      <img src="images/typography_Scrabble.jpg" alt="">
     </div>
 
     <footer>
       <p>
-        Scrabble disclaimer
+        This site is in no way affiliated with Scrabble and provides no guarantees to proper scoring!
       </p>
     </footer>
 
