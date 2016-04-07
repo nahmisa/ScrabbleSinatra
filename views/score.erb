@@ -13,11 +13,9 @@
   <%= params %>
 </div>
 
-<form action="" method="post" accept-charset="utf-8">
+<form class="input-area" action="" method="post" accept-charset="utf-8">
   <label for="score_word">Word</label>
-  <input type="text" name="words[]" value="" id="score_word">
-
-  <!-- name is what the code uses to lable to field. for and id should always be equal -->
+  <input type="text" name="words[]" value="" maxlength=7 id="score_word">
 
   <input type="submit" value="Submit">
 </form>

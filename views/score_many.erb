@@ -4,7 +4,7 @@
 <form action="" method="post" accept-charset="utf-8">
 
   <% @quantity.times do |word_input| %>
-    <lable>Word <input type="text" name="words[]" value=""></b></lable>
+    <lable>Word <input type="text" name="words[]" maxlength=7 value=""></b></lable>
     <!-- br becasue i wanted it to be at the top -->
   <% end %>
   <!-- name is what the code uses to lable to field. for and id should always be equal -->
