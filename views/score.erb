@@ -1,16 +1,8 @@
 <h2>Score One Word</h2>
 
 <%# display word that user scored. %>
-<% if @user_words %>
-  <% score = @user_words.score_many %>
-  <% word = params["words"] %>
-  <% if word[0].empty? %>
-  <%= "Doesn't look like you input a word to score!" %>
-  <% else %>
-  <%= "#{word[0].upcase} has a score of #{score[0]}." %>
-  <% end %>
-  <a href="/score">Start Over</a>
-<% end %>
+<%= erb(:word_scoring) %>
+
 
 <%# prompt user for word to score %>
 <% if !@user_words %>
@@ -21,3 +13,5 @@
     <input type="submit" value="Submit" class="scrabble-button">
   </form>
 <% end %>
+
+<a href="/score">Start Over</a>
