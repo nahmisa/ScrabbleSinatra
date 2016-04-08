@@ -21,6 +21,12 @@ a {
   color: rgba(11, 11, 11, 1);
 }
 
+a:hover {
+  /* offset-x | offset-y | blur-radius | color */
+  text-shadow: 1px 1px 2px black; 
+
+}
+
 /*main {
 
   bottom: 10%;
@@ -113,11 +119,12 @@ input {
   padding: .5rem .6rem;
   display: inline-block;
   border: 0.1rem solid rgba(255, 253, 230, .8);
-  box-shadow: 0.1rem .1rem 0.1rem 0.1rem rgba(255, 253, 230, .8), 0.2rem .2rem 0.2rem 0.2rem rgba(109, 97, 83, 1), .25rem .25rem 0.25rem 0.25rem rgba(11, 11, 11, 1);
-  /*box-shadow: 0 1px 3px rgb(209, 203, 183), 0 1px 3px rgb(209, 203, 183);*/
   border-radius: .1rem;
   background: rgba(255,253,230,0.4);
   vertical-align: middle;
+}
+input.scrabble-button {
+  box-shadow: 0.1rem .1rem 0.1rem 0.1rem rgba(255, 253, 230, .8), 0.2rem .2rem 0.2rem 0.2rem rgba(109, 97, 83, 1), .25rem .25rem 0.25rem 0.25rem rgba(11, 11, 11, 1);
 }
 
 

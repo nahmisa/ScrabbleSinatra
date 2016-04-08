@@ -1,4 +1,4 @@
-  
+
 <h2>Score Many Words</h2>
 
 <%# display scored used words %>
@@ -27,7 +27,7 @@
   <% @quantity.times do |word_input| %>
     <label class="new-line">Word<input type="text" name="words[]" maxlength=7 value="" class="labeled"></b></label>
   <% end %>
-  <input type="submit" value="Score">
+  <input type="submit" value="Score" class="scrabble-button">
 </form>
 <% end %>
 
@@ -36,6 +36,6 @@
   <form action="" method="post">
     Number of words to score:
     <input type="number" name="quantity" min="1">
-    <input type="submit" value="Go!">
+    <input type="submit" value="Go!" class="scrabble-button">
   </form>
 <% end %>
