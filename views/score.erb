@@ -2,7 +2,6 @@
 
 <%# display word that user scored. %>
 <% if @user_words %>
-<div class="params_post">
   <% score = @user_words.score_many %>
   <% word = params["words"] %>
   <% if word[0].empty? %>
@@ -11,7 +10,6 @@
   <%= "#{word[0].upcase} has a score of #{score[0]}." %>
   <% end %>
   <a href="/score">Start Over</a>
-</div>
 <% end %>
 
 <%# prompt user for word to score %>
