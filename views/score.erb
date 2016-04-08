@@ -1,8 +1,7 @@
-<h2><a href="/score">Score One Word</a></h2>
+<h2>Score One Word</h2>
 
 <%# display word that user scored. %>
 <% if @user_words %>
-<!-- why does this make it know we are post? is it the same as saying if @user_word exists???? -->
 <div class="params_post">
   <% score = @user_words.score_many %>
   <% word = params["words"] %>
@@ -11,15 +10,15 @@
   <% else %>
   <%= "#{word[0].upcase} has a score of #{score[0]}." %>
   <% end %>
+  <a href="/score">Start Over</a>
 </div>
 <% end %>
-
 
 <%# prompt user for word to score %>
 <% if !@user_words %>
   <form action="" method="post" accept-charset="utf-8">
     <label for="score_word">Word</label>
-    <input type="text" name="words[]" value="" maxlength=7  id="score_word">
+    <input type="text" name="words[]" value="" maxlength=7  id="score_word" class="labeled">
 
     <input type="submit" value="Submit">
   </form>

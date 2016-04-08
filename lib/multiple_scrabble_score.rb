@@ -15,6 +15,14 @@ class ScrabbleMultiple
     end
   end
 
+  def points_many_words(words = @words)
+    words_collection = {}
+    letter_points = words.each do |word|
+      words_collection[word] = points_by_letter(word)
+    end
+    return words_collection
+  end
+
   def score(word) # takes a string
     return 0 if word.empty? # empty string/pass
 
@@ -30,6 +38,19 @@ class ScrabbleMultiple
     end
 
     return score
+  end
+
+  def points_by_letter(word)
+    return 0 if word.empty?
+
+    split_word = word.downcase.split('') # downcase for comparing
+
+    letter_points = split_word.collect do |letter|
+      LETTER_SCORES[letter]
+    end
+
+    return split_word.zip(letter_points)
+
   end
 
 end

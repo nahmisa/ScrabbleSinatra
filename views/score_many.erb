@@ -1,14 +1,23 @@
-<h2><a href="/score-many">Score Many Words</a></h2>
+<h2>Score Many Words</h2>
 
 <%# display scored used words %>
 <% if @user_words %>
-<div class="params_post">
+<div class="word-output">
   <% scores = @user_words.score_many %>
+  <% each_letter_points = @user_words.points_many_words %>
+
   <% words = params["words"] %>
   <% words.zip(scores).each do |word , score| %>
     <% next if word.empty? %>
-    <%= "#{word.upcase} has a score of #{score}." %>
+      <%= "#{word.upcase} has a score of #{score}." %>
+        <ul>
+          <% each_letter_points[word].each do |letter, points| %>
+            <li class="letter-tile"><span class="letter"><%= letter.upcase %></span><span class="points"><%= points %></span></li>
+          <% end %>
+            <li><%= "50 point 7-letter bonus!" if word.length == 7 %></li>
+        </ul>
   <% end %>
+  <a href="/score-many">Start Over</a>
 </div>
 <% end %>
 
@@ -17,7 +26,7 @@
 <form action="" method="post" accept-charset="utf-8">
 
   <% @quantity.times do |word_input| %>
-    <lable class="new-line">Word<input type="text" name="words[]" maxlength=7 value=""></b></lable>
+    <label class="new-line">Word<input type="text" name="words[]" maxlength=7 value="" class="labeled"></b></label>
   <% end %>
   <input type="submit" value="Score">
 </form>
