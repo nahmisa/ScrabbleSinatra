@@ -8,6 +8,12 @@
 <% if @quantity && !@user_words %>
 <form action="" method="post" accept-charset="utf-8">
 
+  <fieldset>
+    <legend>Game Options</legend>
+      <label><input type="radio" name="bonus" value="true" checked="checked">7-letter Bonus</label>
+      <label><input type="radio" name="bonus" value="false">No Bonus</label>
+  </fieldset>
+
   <% @quantity.times do |word_input| %>
     <label class="new-line">Word<input type="text" name="words[]" maxlength=7 value="" class="labeled"></b></label>
   <% end %>
@@ -18,9 +24,8 @@
 <%# prompt user for number of words to score %>
 <% if !@user_words && !@quantity %>
   <form action="" method="post">
-    Number of words to score:
-    <input type="number" name="quantity" min="1">
-    <input type="submit" value="Go!" class="scrabble-button">
+    <label>Number of Words: <input type="number"name="quantity" min="1"></label>
+    <input type="submit" value="Go!"class="scrabble-button">
   </form>
 <% end %>
 

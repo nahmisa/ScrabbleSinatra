@@ -10,7 +10,7 @@
           <% each_letter_points[word].each do |letter, points| %>
             <li class="letter-tile"><span class="letter"><%= letter.upcase %></span><span class="points"><%= points %></span></li>
           <% end %>
-            <li><%= "50 point 7-letter bonus!" if word.length == 7 %></li>
+            <li><%= "50 point 7-letter bonus!" if word.length == 7 && @user_words.bonus == "true" %></li>
         </ul>
   <% end %>
 <% end %>

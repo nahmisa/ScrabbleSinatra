@@ -5,8 +5,11 @@ class ScrabbleMultiple
     "z"=>10}
   BONUS_NUMBER_OF_LETTERS = 7
 
-  def initialize(words_array)
+  attr_reader :bonus
+
+  def initialize(words_array, bonus)
   @words = words_array
+  @bonus = bonus
   end
 
   def score_many(words = @words)
@@ -29,7 +32,7 @@ class ScrabbleMultiple
     score = 0
 
     #Add bonus for word_length corner case.
-    score = 50 if word.length >= BONUS_NUMBER_OF_LETTERS
+    score = 50 if (bonus == "true" && word.length == BONUS_NUMBER_OF_LETTERS)
 
     split_word = word.downcase.split('') # downcase for comparing
 

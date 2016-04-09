@@ -13,7 +13,7 @@ class ScrabbleScore < Sinatra::Base
   end
 
   post '/score' do
-    @user_words = ScrabbleMultiple.new(params["words"])
+    @user_words = ScrabbleMultiple.new(params["words"], params["bonus"])
 
     erb :score
   end
@@ -25,7 +25,7 @@ class ScrabbleScore < Sinatra::Base
   post '/score-many' do
 
     unless params["words"].nil?
-      @user_words = ScrabbleMultiple.new(params["words"])
+      @user_words = ScrabbleMultiple.new(params["words"], params["bonus"])
     end
 
     @quantity = params["quantity"].to_i
