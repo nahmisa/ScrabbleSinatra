@@ -3,16 +3,10 @@
 <%# display word that user scored. %>
 <%= erb(:word_scoring) %>
 
-
 <%# prompt user for word to score %>
-<% if !@user_words %>
+<% if !@user_input %>
   <form action="" method="post" accept-charset="utf-8">
-    <fieldset>
-      <legend>Game Options</legend>
-        <label><input type="radio" name="bonus" value="true" checked="checked">7-letter Bonus</label>
-        <label><input type="radio" name="bonus" value="false">No Bonus</label>
-    </fieldset>
-    
+
     <label for="score_word">Word
     <input type="text" name="words[]" value="" maxlength=7  id="score_word" class="labeled"></label>
 

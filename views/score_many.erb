@@ -5,7 +5,7 @@
 <%= erb(:word_scoring) %>
 
 <%# display prompt for user word input %>
-<% if @quantity && !@user_words %>
+<% if @quantity && !@user_input %>
 <form action="" method="post" accept-charset="utf-8">
 
   <fieldset>
@@ -22,9 +22,9 @@
 <% end %>
 
 <%# prompt user for number of words to score %>
-<% if !@user_words && !@quantity %>
+<% if !@user_input && !@quantity %>
   <form action="" method="post">
-    <label>Number of Words: <input type="number"name="quantity" min="1"></label>
+    <label>Number of Words: <input type="number"name="quantity" min="1" value="1"></label>
     <input type="submit" value="Go!"class="scrabble-button">
   </form>
 <% end %>
