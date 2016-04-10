@@ -5,8 +5,12 @@ html {
   margin: 0;
 }
 
-h1, h2 {
+h1 {
   margin: 0;
+}
+
+h2 {
+  margin: 1rem;
 }
 
 a {
@@ -87,6 +91,8 @@ input {
 input.scrabble-button {
   /*shadowing like scrabble tile on buttons*/
   box-shadow: 0.1rem .1rem 0.1rem 0.1rem rgba(255, 253, 230, .8), 0.2rem .2rem 0.2rem 0.2rem rgba(109, 97, 83, 1), .25rem .25rem 0.25rem 0.25rem rgba(11, 11, 11, 1);
+  margin-top: 1.5rem;
+  margin-bottom: .5rem;
 }
 
 /* letter scoring output for user words to look like scrabble tile*/
